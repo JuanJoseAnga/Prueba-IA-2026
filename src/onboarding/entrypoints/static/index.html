@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Demo conversacional de onboarding bancario" />
+    <title>Onboarding digital</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="side-panel">
+        <div>
+          <div class="brand-mark" aria-hidden="true">O</div>
+          <p class="eyebrow">BANCA DIGITAL</p>
+          <h1>Abre tu cuenta conversando.</h1>
+          <p class="intro">
+            Una demostración segura del proceso coordinado por agentes especializados.
+          </p>
+        </div>
+
+        <ol class="agent-list" aria-label="Agentes del proceso">
+          <li data-agent="identity"><span>01</span><div><strong>Identidad</strong><small>Validación documental</small></div></li>
+          <li data-agent="risk"><span>02</span><div><strong>Riesgo</strong><small>Consulta de listas</small></div></li>
+          <li data-agent="documentation"><span>03</span><div><strong>Documentación</strong><small>Requisitos del producto</small></div></li>
+          <li data-agent="response"><span>04</span><div><strong>Respuesta</strong><small>Comunicación personalizada</small></div></li>
+        </ol>
+
+        <div class="security-note">
+          <span aria-hidden="true">◆</span>
+          <p>Entorno de demostración. Usa únicamente los documentos mock indicados.</p>
+        </div>
+      </aside>
+
+      <section class="chat-panel" aria-label="Chat de onboarding">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">ASISTENTE DE ONBOARDING</p>
+            <h2>Solicitud de nueva cuenta</h2>
+          </div>
+          <div class="online"><span></span> En línea</div>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <div id="quickReplies" class="quick-replies" aria-label="Opciones rápidas"></div>
+
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="chatInput">Escribe tu respuesta</label>
+          <input
+            id="chatInput"
+            name="message"
+            autocomplete="off"
+            placeholder="Escribe tu respuesta…"
+            maxlength="120"
+            required
+          />
+          <button type="submit" aria-label="Enviar respuesta">
+            <span>Enviar</span><span aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <footer>
+          <button id="restartButton" class="text-button" type="button">Reiniciar conversación</button>
+          <a href="/docs" target="_blank" rel="noreferrer">Abrir API Docs ↗</a>
+        </footer>
+      </section>
+    </main>
+
+    <template id="typingTemplate">
+      <div class="message-row bot typing-row">
+        <div class="avatar">O</div>
+        <div class="bubble typing"><span></span><span></span><span></span></div>
+      </div>
+    </template>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
